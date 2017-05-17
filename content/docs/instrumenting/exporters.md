@@ -120,6 +120,7 @@ wide variety of JVM-based applications, for example [Kafka](http://kafka.apache.
    * [BIND exporter](https://github.com/digitalocean/bind_exporter)
    * [Blackbox exporter](https://github.com/prometheus/blackbox_exporter) (**official**)
    * [BOSH exporter](https://github.com/cloudfoundry-community/bosh_exporter)
+   * [cAdvisor](https://github.com/google/cadvisor)
    * [Dovecot exporter](https://github.com/kumina/dovecot_exporter)
    * [Jenkins exporter](https://github.com/lovoo/jenkins_exporter)
    * [Kemp LoadBalancer exporter](https://github.com/giantswarm/prometheus-kemp-exporter)
@@ -143,18 +144,26 @@ possible.
 
 ## Directly instrumented software
 
-Some third-party software already exposes Prometheus metrics natively, so no
-separate exporters are needed:
+Some third-party software directly uses a Prometheus client library and exposes
+metrics in the Prometheus format, so no separate exporters are needed:
 
-   * [cAdvisor](https://github.com/google/cadvisor)
    * [Doorman](https://github.com/youtube/doorman)
    * [Etcd](https://github.com/coreos/etcd)
-   * [Kubernetes-Mesos](https://github.com/mesosphere/kubernetes-mesos)
    * [Kubernetes](https://github.com/kubernetes/kubernetes)
-   * [RobustIRC](http://robustirc.net/)
    * [Quobyte](https://www.quobyte.com/)
    * [SkyDNS](https://github.com/skynetservices/skydns)
-   * [Weave Flux](http://weaveworks.github.io/flux/)
+
+## Software exposing Prometheus metrics
+
+Some third-party software uses a non-Prometheus instrumentation system, but
+does offer metrics in the Prometheus format:
+
+   * [Collectd](https://collectd.org/wiki/index.php/Plugin:Write_Prometheus)
+   * [Linkerd](https://github.com/BuoyantIO/linkerd)
+   * [Netdata](https://github.com/firehol/netdata)
+   * [RobustIRC](http://robustirc.net/)
+   * [Telegraf](https://github.com/influxdata/telegraf/tree/master/plugins/outputs/prometheus_client)
+   * [Weave Flux](https://github.com/weaveworks/flux)
 
 ## Other third-party utilities
 
